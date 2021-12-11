@@ -96,7 +96,8 @@ td:last-child {
 #combatantTableBody .Pld td,
 #combatantTableBody .Mrd td,
 #combatantTableBody .War td,
-#combatantTableBody .Drk td {
+#combatantTableBody .Drk td,
+#combatantTableBody .Gnb td {
 
 	color: #ffffff;
 	background-color: rgba(41,112,243,0.2);
@@ -106,7 +107,8 @@ td:last-child {
 #combatantTableBody .Cnj td,
 #combatantTableBody .Whm td,
 #combatantTableBody .Sch td,
-#combatantTableBody .Ast td {
+#combatantTableBody .Ast td,
+#combatantTableBody .Sge td {
 
 	color: #ffffff;
 	background-color: rgba(107,240,86,0.2);
@@ -125,7 +127,12 @@ td:last-child {
 #combatantTableBody .Smn td,
 #combatantTableBody .Thm td,
 #combatantTableBody .Blm td,
-#combatantTableBody .Mch td, #combatantTableBody .Sam td, #combatantTableBody .Rdm td, {
+#combatantTableBody .Mch td,
+#combatantTableBody .Sam td,
+#combatantTableBody .Rdm td,
+#combatantTableBody .Dnc td,
+#combatantTableBody .Rpr td,
+#combatantTableBody .Blu td {
 	color: #ffffff;
 	background-color: rgba(200,3,8,0.2);
 	background-blend-mode: soft-light;
@@ -191,6 +198,8 @@ td:last-child {
 			{ text: "DMG", width: "3.3em", align: "right" },
 			{ text: "", width: "3em", align: "left" },
 			{ text: "Crit", width: "2.5em", align: "center" },
+			{ text: "DH", width: "2.5em", align: "center" },
+			{ text: "C&D", width: "2.5em", align: "center" },
 			{ text: "Miss", width: "2.5em", align: "center" },
 			{ text: "Best Hit", width: "7.5em", align: "center" }
 		];
@@ -204,6 +213,8 @@ td:last-child {
 			{ text: "{damage}", width: "", align: "right" },
 			{ text: "({damage%})", width: "", align: "left" },
 			{ text: "{crithit%}", width: "", align: "center" },
+			{ text: "{DirectHitPct}", width: "", align: "center" },
+			{ text: "{CritDirectHitPct}", width: "", align: "center", effect: redTextEffect },
 			{ text: "{misses}", width: "", align: "center", effect: redTextEffect },
 			{ text: "{maxhit}", width: "", align: "center", }
 		];
@@ -231,8 +242,8 @@ td:last-child {
 		}
 
 function dpsBarEffect(cell, combatant, index) {
-    var tank = ["Gla", "Pld", "Mrd", "War", "Drk"]
-    var dps = ["Pgl", "Mnk", "Lnc", "Drg", "Arc", "Brd", "Rog", "Nin", "Acn", "Smn", "Thm", "Blm", "Mch"]
+    var tank = ["Gla", "Pld", "Mrd", "War", "Drk", "Gnb"]
+    var dps = ["Pgl", "Mnk", "Lnc", "Drg", "Arc", "Brd", "Rog", "Nin", "Acn", "Smn", "Thm", "Blm", "Mch", "Sam", "Rdm", "Dnc", "Blu"]
     var healer = ["Cnj", "Whm", "Sch", "Ast"]
 
     if (index == 0 || typeof dpsBarEffect.topdeeps == 'undefined') {
